@@ -100,7 +100,7 @@ def main(page: ft.Page):
 
             archivo_excel = file.path
             archivo.value = f"📄 {file.name}"
-            archivo.color = "#2980B9"
+            archivo.color = "#141313"
             boton_eliminar_archivo.visible = True
             page.update()
 
@@ -145,7 +145,7 @@ def main(page: ft.Page):
     boton_subir_archivo = ft.ElevatedButton(
         text="   Seleccionar archivo",
         color="white",
-        bgcolor="#2ECC71",
+        bgcolor="#2c3e50",
         icon=ft.Icons.FILE_UPLOAD,
         on_click=seleccionar_archivo,
         style=ft.ButtonStyle(
@@ -157,7 +157,7 @@ def main(page: ft.Page):
     boton_evaluar_archivo = ft.ElevatedButton(
         text="Evaluar",
         icon=ft.Icons.PLAY_ARROW,
-        bgcolor="#3498DB",
+        bgcolor="#EB1C0D",
         color="white",
         style=ft.ButtonStyle(
             shape=ft.RoundedRectangleBorder(radius=12),
@@ -166,13 +166,13 @@ def main(page: ft.Page):
         on_click=evaluar_expresiones
     )
 
-    # -------------------- Tarjeta principal de la UI --------------------
+    # -------------------- Tarjeta principal --------------------
     card = ft.Card(
         content=ft.Container(
             content=ft.Column(
                 [
                     ft.Icon(ft.Icons.CALCULATE, size=60, color="#2c3e50"),
-                    ft.Text("SheetSolver", size=34, weight=ft.FontWeight.BOLD, color="#2c3e50"),
+                    ft.Text("Lex & Parse", size=34, weight=ft.FontWeight.BOLD, color="#2c3e50"),
                     boton_subir_archivo,
                     boton_evaluar_archivo,
                     click_archivo,
@@ -197,12 +197,11 @@ def main(page: ft.Page):
         top=225
     )
 
-    # -------------------- Añadir todos los elementos a la página --------------------
-    # Esto incluye: fondo, tarjeta principal y la imagen decorativa
+    # -------------------- Elementos a la página --------------------
     page.add(
         ft.Stack(
             [
-                ft.Container(expand=True, bgcolor="#D9ECFF"),  # Fondo
+                ft.Container(expand=True, bgcolor="#D1CECE"),  # Fondo
                 ft.Container(
                     content=ft.Column(
                         [card],
